@@ -1,3 +1,3 @@
 cd ..
-docker build -t ghcr.io/smartstore/smartstore-linux .
+docker build -t smartstore-ilap .
 echo 'Press enter to exit...'; read dummy;

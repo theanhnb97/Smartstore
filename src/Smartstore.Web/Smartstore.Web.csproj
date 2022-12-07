@@ -102,7 +102,7 @@
 		<!--Set this parameter to true to get the dlls copied from the NuGet cache to the output of your project-->
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-
+        <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
 		<!--The common language runtime (CLR) supports two types of garbage collection:
 		workstation garbage collection, which is available on all systems, and server garbage collection,
 		which is available on multiprocessor systems.
