@@ -58,7 +58,7 @@ var configuration = (IConfiguration)builder.Configuration
 
 // Setup Serilog logging
 Log.Logger = SetupSerilog(configuration);
-
+Log.Logger.Warning("Starting...");
 var maxRequestBodySize = configuration["Smartstore:MaxRequestBodySize"];
 
 builder.Host

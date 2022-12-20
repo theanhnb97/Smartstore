@@ -83,6 +83,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{2E0202
 		build\build.win-x86.cmd = build\build.win-x86.cmd
 		build\compose.mysql.sh = build\compose.mysql.sh
 		build\compose.sqlserver.sh = build\compose.sqlserver.sh
+		Dockerfile = Dockerfile
 		build\dockerize.linux.nobuild.sh = build\dockerize.linux.nobuild.sh
 		build\dockerize.linux.sh = build\dockerize.linux.sh
 		build\dockerize.windows.nobuild.sh = build\dockerize.windows.nobuild.sh

@@ -163,14 +163,6 @@
     <div class="footer-bottom-wrapper">
         <div class="container footer-bottom">
             <div class="row sm-gutters">
-                <div sm-if="Model.ShowLegalInfo" class="col pb-1 pb-sm-0">
-                    @Html.Raw(Model.LegalInfo)
-                </div>
-
-                <div sm-if="Model.SmartStoreHint.HasValue()" class="col-12 col-sm-auto pb-1 pb-sm-0 text-sm-center">
-                    @Html.Raw(Model.SmartStoreHint)
-                </div>
-
                 <div class="col text-sm-right">
                     @Html.Raw(T("Content.CopyrightNotice", DateTime.Now.Year.ToString(), Model.StoreName))
                 </div>
