@@ -548,6 +548,7 @@ namespace Smartstore.Web.Controllers
         public IActionResult ExternalLogin(string provider, string returnUrl = null)
         {
             var redirectUrl = Url.Action(nameof(ExternalLoginCallback), "Identity");
+            redirectUrl = redirectUrl.Replace("http://", "https://");
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             properties.AllowRefresh = true;
             properties.IsPersistent = true;
@@ -587,7 +588,8 @@ namespace Smartstore.Web.Controllers
                 {
                     var customer = new Customer
                     {
-                        Username = info.Principal.FindFirstValue(ClaimTypes.Name),
+                        //Username = info.Principal.FindFirstValue(ClaimTypes.Name),
+                        Username = info.Principal.FindFirstValue(ClaimTypes.Email),
                         Email = info.Principal.FindFirstValue(ClaimTypes.Email),
                         PasswordFormat = _customerSettings.DefaultPasswordFormat,
                         Active = _customerSettings.UserRegistrationType == UserRegistrationType.Standard,
