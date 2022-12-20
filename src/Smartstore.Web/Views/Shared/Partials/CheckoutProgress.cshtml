@@ -3,6 +3,7 @@
 @model CheckoutProgressModel
 
 @{
+    //anhnt
     var progresses = new List<dynamic>
     {
         // Cart
@@ -26,25 +27,25 @@
             Href = Url.Action("BillingAddress")
         },
         // Shipping
-        new
-        {
-            Step = CheckoutProgressStep.Shipping,
-            StepName = "shipping",
-            Label =  T("Checkout.Progress.Shipping").Value,
-            Visited = Model.CheckoutProgressStep > CheckoutProgressStep.Shipping,
-            Active = Model.CheckoutProgressStep == CheckoutProgressStep.Shipping,
-            Href = Url.Action("ShippingMethod")
-        },
-        // Payment
-        new
-        {
-            Step = CheckoutProgressStep.Payment,
-            StepName = "payment",
-            Label =  T("Checkout.Progress.Payment").Value,
-            Visited = Model.CheckoutProgressStep > CheckoutProgressStep.Payment,
-            Active = Model.CheckoutProgressStep == CheckoutProgressStep.Payment,
-            Href = Url.Action("PaymentMethod")
-        },
+        //new
+        //{
+        //    Step = CheckoutProgressStep.Shipping,
+        //    StepName = "shipping",
+        //    Label =  T("Checkout.Progress.Shipping").Value,
+        //    Visited = Model.CheckoutProgressStep > CheckoutProgressStep.Shipping,
+        //    Active = Model.CheckoutProgressStep == CheckoutProgressStep.Shipping,
+        //    Href = Url.Action("ShippingMethod")
+        //},
+        //// Payment
+        //new
+        //{
+        //    Step = CheckoutProgressStep.Payment,
+        //    StepName = "payment",
+        //    Label =  T("Checkout.Progress.Payment").Value,
+        //    Visited = Model.CheckoutProgressStep > CheckoutProgressStep.Payment,
+        //    Active = Model.CheckoutProgressStep == CheckoutProgressStep.Payment,
+        //    Href = Url.Action("PaymentMethod")
+        //},
         // Confirm
         new
         {

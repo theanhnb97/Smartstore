@@ -159,7 +159,8 @@ namespace Smartstore.Web.Controllers
 
             await _db.SaveChangesAsync();
 
-            return RedirectToAction(nameof(BillingAddress));
+            //anhnt
+            return RedirectToAction(nameof(ShippingAddress));
         }
 
         public async Task<IActionResult> BillingAddress()
@@ -464,7 +465,9 @@ namespace Smartstore.Web.Controllers
 
             var checkoutState = _checkoutStateAccessor.CheckoutState;
             checkoutState.CustomProperties["HasOnlyOneActivePaymentMethod"] = model.PaymentMethods.Count == 1;
-            checkoutState.IsPaymentRequired = shoppingCartTotal.GetValueOrDefault() != decimal.Zero;
+
+            //anhnt
+            checkoutState.IsPaymentRequired = false; // shoppingCartTotal.GetValueOrDefault() != decimal.Zero;
             checkoutState.IsPaymentSelectionSkipped = !checkoutState.IsPaymentRequired || _paymentSettings.BypassPaymentMethodSelectionIfOnlyOne && onlyOnePassiveMethod;
 
             if (checkoutState.IsPaymentSelectionSkipped)
@@ -524,7 +527,8 @@ namespace Smartstore.Web.Controllers
             // Validate info
             if (!await ValidatePaymentDataAsync(paymentMethodProvider.Value, form))
             {
-                return RedirectToAction(nameof(PaymentMethod));
+                //anhnt
+                return RedirectToAction(nameof(Confirm));
             }
 
             // Save payment data so that the user must not re-enter it.

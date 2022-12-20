@@ -157,52 +157,54 @@ namespace Smartstore.Core.Checkout.Shipping
                 .Where(x => allowedShippingRateComputationMethodSystemName.IsEmpty() || allowedShippingRateComputationMethodSystemName.EqualsNoCase(x.Metadata.SystemName))
                 .ToList();
 
-            if (computationMethods.IsNullOrEmpty())
-            {
-                throw new InvalidOperationException(T("Shipping.CouldNotLoadMethod"));
-            }
+            //anhnt
+            //if (computationMethods.IsNullOrEmpty())
+            //{
+            //    throw new InvalidOperationException(T("Shipping.CouldNotLoadMethod"));
+            //}
 
             // Get shipping options.
             var workingCurrency = _workContext.WorkingCurrency;
             var result = new ShippingOptionResponse();
 
-            foreach (var method in computationMethods)
-            {
-                var response = await method.Value.GetShippingOptionsAsync(request);
-                foreach (var option in response.ShippingOptions)
-                {
-                    option.ShippingRateComputationMethodSystemName = method.Metadata.SystemName;
-                    option.Rate = workingCurrency.RoundIfEnabledFor(option.Rate);
+            //anhnt
+            //foreach (var method in computationMethods)
+            //{
+            //    var response = await method.Value.GetShippingOptionsAsync(request);
+            //    foreach (var option in response.ShippingOptions)
+            //    {
+            //        option.ShippingRateComputationMethodSystemName = method.Metadata.SystemName;
+            //        option.Rate = workingCurrency.RoundIfEnabledFor(option.Rate);
 
-                    result.ShippingOptions.Add(option);
-                }
+            //        result.ShippingOptions.Add(option);
+            //    }
 
-                // Log errors.
-                if (!response.Success)
-                {
-                    foreach (var error in response.Errors)
-                    {
-                        result.Errors.Add(error);
+            //    // Log errors.
+            //    if (!response.Success)
+            //    {
+            //        foreach (var error in response.Errors)
+            //        {
+            //            result.Errors.Add(error);
 
-                        if (request?.Items?.Any() ?? false)
-                        {
-                            Logger.Warn(error);
-                        }
-                    }
-                }
-            }
+            //            if (request?.Items?.Any() ?? false)
+            //            {
+            //                Logger.Warn(error);
+            //            }
+            //        }
+            //    }
+            //}
 
-            // Return valid options if any present (ignores the errors returned by other shipping rate compuation methods).
-            if (_shippingSettings.ReturnValidOptionsIfThereAreAny && result.ShippingOptions.Any() && result.Errors.Any())
-            {
-                result.Errors.Clear();
-            }
+            //// Return valid options if any present (ignores the errors returned by other shipping rate compuation methods).
+            //if (_shippingSettings.ReturnValidOptionsIfThereAreAny && result.ShippingOptions.Any() && result.Errors.Any())
+            //{
+            //    result.Errors.Clear();
+            //}
 
-            // No shipping options loaded.
-            if (!result.ShippingOptions.Any() && !result.Errors.Any())
-            {
-                result.Errors.Add(T("Checkout.ShippingOptionCouldNotBeLoaded"));
-            }
+            //// No shipping options loaded.
+            //if (!result.ShippingOptions.Any() && !result.Errors.Any())
+            //{
+            //    result.Errors.Add(T("Checkout.ShippingOptionCouldNotBeLoaded"));
+            //}
 
             return result;
         }
