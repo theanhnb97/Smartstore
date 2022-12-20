@@ -71,6 +71,7 @@ namespace Smartstore.Web.Components
                 PinterestLink = _socialSettings.PinterestLink,
                 YoutubeLink = _socialSettings.YoutubeLink,
                 InstagramLink = _socialSettings.InstagramLink,
+                TikTokLink = _socialSettings.TikTokLink,
             };
 
             var shippingInfoUrl = await Url.TopicAsync("shippinginfo");

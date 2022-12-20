@@ -15,5 +15,6 @@
         public string PinterestLink { get; set; }
         public string YoutubeLink { get; set; }
         public string InstagramLink { get; set; }
+        public string TikTokLink { get; set; }
     }
 }

@@ -30,6 +30,11 @@
         socialLinks.Add((Model.InstagramLink, "instagram"));
     }
 
+    if (Model.TikTokLink.HasValue())
+    {
+        socialLinks.Add((Model.TikTokLink, "tiktok"));
+    }
+
     var invserseFooter = Display.GetThemeVariable<bool>("inverse-footer");
 }
 

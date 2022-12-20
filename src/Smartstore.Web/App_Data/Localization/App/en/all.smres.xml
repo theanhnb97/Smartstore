@@ -6564,6 +6564,12 @@
 	<LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.SocialSettings.InstagramLink.Hint">
 		<Value>Leave this field empty if the Instagram link should not be shown</Value>
 	</LocaleResource>
+    <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.SocialSettings.TikTokLink">
+		<Value>TikTok Link</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.SocialSettings.TikTokLink.Hint">
+		<Value>Leave this field empty if the TikTok link should not be shown</Value>
+	</LocaleResource>
 	<LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.SocialSettings.PinterestLink">
 		<Value>Pinterest link</Value>
 	</LocaleResource>

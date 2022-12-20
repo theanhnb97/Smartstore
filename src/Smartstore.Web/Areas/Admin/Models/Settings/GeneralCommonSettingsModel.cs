@@ -374,6 +374,9 @@ namespace Smartstore.Admin.Models
 
             [LocalizedDisplay("*InstagramLink")]
             public string InstagramLink { get; set; }
+
+            [LocalizedDisplay("*TikTokLink")]
+            public string TikTokLink { get; set; }
         }
 
         #endregion

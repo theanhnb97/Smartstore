@@ -43,5 +43,10 @@ namespace Smartstore.Core.Common.Settings
         /// Gets or sets the instagram link.
         /// </summary>
         public string InstagramLink { get; set; } = "#";
+
+        /// <summary>
+        /// Gets or sets the tiktok link.
+        /// </summary>
+        public string TikTokLink { get; set; } = "#";
     }
 }
