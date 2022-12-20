@@ -71,10 +71,10 @@ namespace Smartstore.Core.Checkout.Shipping
                     return new Provider<IShippingRateComputationMethod>[] { fallbackMethod };
                 }
 
-                if (DataSettings.DatabaseIsInstalled())
-                {
-                    throw new Exception(T("Shipping.OneActiveMethodProviderRequired"));
-                }
+                //if (DataSettings.DatabaseIsInstalled())
+                //{
+                //    throw new Exception(T("Shipping.OneActiveMethodProviderRequired"));
+                //}
             }
 
             return activeMethods;

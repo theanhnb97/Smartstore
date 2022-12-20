@@ -146,10 +146,10 @@ namespace Smartstore.Core.Checkout.Payment
                     return new Provider<IPaymentMethod>[] { fallbackMethod };
                 }
 
-                if (DataSettings.DatabaseIsInstalled())
-                {
-                    throw new InvalidOperationException(T("Payment.OneActiveMethodProviderRequired"));
-                }
+                //if (DataSettings.DatabaseIsInstalled())
+                //{
+                //    throw new InvalidOperationException(T("Payment.OneActiveMethodProviderRequired"));
+                //}
             }
 
             return activeProviders;
