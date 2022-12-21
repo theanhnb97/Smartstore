@@ -217,11 +217,13 @@ namespace Smartstore.Core.Checkout.Payment
 
         public virtual async Task<PreProcessPaymentResult> PreProcessPaymentAsync(ProcessPaymentRequest processPaymentRequest)
         {
-            if (processPaymentRequest.OrderTotal == decimal.Zero)
-                return new();
+            //anhnt
+            return new();
+            //if (processPaymentRequest.OrderTotal == decimal.Zero)
+            //    return new();
 
-            var paymentMethod = await LoadMethodOrThrowAsync(processPaymentRequest.PaymentMethodSystemName);
-            return await paymentMethod.Value.PreProcessPaymentAsync(processPaymentRequest);
+            //var paymentMethod = await LoadMethodOrThrowAsync(processPaymentRequest.PaymentMethodSystemName);
+            //return await paymentMethod.Value.PreProcessPaymentAsync(processPaymentRequest);
         }
 
         public virtual async Task<ProcessPaymentResult> ProcessPaymentAsync(ProcessPaymentRequest processPaymentRequest)

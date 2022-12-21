@@ -211,7 +211,8 @@ namespace Smartstore.Core.Checkout.Orders
                     return (warnings, cart);
                 }
 
-                skipPaymentWorkflow = cartTotal.Value == decimal.Zero;
+                //anhnt
+                skipPaymentWorkflow = true; //cartTotal.Value == decimal.Zero;
 
                 // Address validations.
                 if (customer.BillingAddress == null)
@@ -258,7 +259,9 @@ namespace Smartstore.Core.Checkout.Orders
                     Total = new(initialOrder.OrderTotal, _primaryCurrency)
                 };
 
-                skipPaymentWorkflow = cartTotal.Total.Value == decimal.Zero;
+                //anhnt
+                skipPaymentWorkflow = true; //cartTotal.Value == decimal.Zero;
+
                 paymentMethodSystemName = initialOrder.PaymentMethodSystemName;
 
                 // Address validations.
@@ -558,7 +561,8 @@ namespace Smartstore.Core.Checkout.Orders
                 order.ShippingAddress = ctx.CartRequiresShipping ? (Address)io.ShippingAddress.Clone() : null;
             }
 
-            var skipPaymentWorkflow = ctx.CartTotal.Total.Value == decimal.Zero;
+            //anhnt
+            var skipPaymentWorkflow = true;// ctx.CartTotal.Total.Value == decimal.Zero;
             var paymentMethod = !skipPaymentWorkflow
                 ? await _paymentService.LoadPaymentMethodBySystemNameAsync(pr.PaymentMethodSystemName)
                 : null;
