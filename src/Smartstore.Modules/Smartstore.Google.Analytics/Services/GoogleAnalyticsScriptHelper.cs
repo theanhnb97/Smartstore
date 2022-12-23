@@ -93,7 +93,7 @@ namespace Smartstore.Google.Analytics.Services
                 model.Id,
                 model.Sku,
                 model.Name,
-                !model.Price.HasDiscount ? string.Empty : model.Price.Saving.SavingAmount.Value.Amount.ToStringInvariant("n2"),
+                !model.Price.HasDiscount ? string.Empty : model.Price.Saving.SavingAmount.Value.Amount.ToStringInvariant(""),
                 brand != null ? brand.Name : string.Empty,
                 model.Price.FinalPrice.Amount.ToStringInvariant("n2"),
                 categoryPathScript, addComma: false);
@@ -201,7 +201,7 @@ namespace Smartstore.Google.Analytics.Services
                     product.Id,
                     product.Sku,
                     product.ProductName,
-                    product.Discount.Amount.ToStringInvariant("n2"),
+                    product.Discount.Amount.ToStringInvariant(""),
                     string.Empty,
                     product.UnitPrice.Amount.ToStringInvariant("n2"),
                     index: ++i);
@@ -283,7 +283,7 @@ namespace Smartstore.Google.Analytics.Services
                     product.Id,
                     product.Sku,
                     product.Name,
-                    discount != null ? discount.Value.Amount.ToStringInvariant("n2") : "0",
+                    discount != null ? discount.Value.Amount.ToStringInvariant("") : "0",
                     product.Brand != null ? product.Brand.Name : string.Empty,
                     product.Price.FinalPrice.Amount.ToStringInvariant(),
                     categoryPathScript,
